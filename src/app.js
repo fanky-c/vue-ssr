@@ -15,7 +15,7 @@ Vue.mixin(titleMixin)
 Vue.use(directive);
 
 // ajax
-Vue.use(axios);
+// Vue.use(axios);
 
 // filters
 Object.keys(filters).forEach(key => {

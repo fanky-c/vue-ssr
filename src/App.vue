@@ -41,7 +41,7 @@ export default {
 }
 
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font: 12px Arial,"Microsoft YaHei",Malgun Gothic,Meiryo,sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;

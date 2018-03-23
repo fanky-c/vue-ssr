@@ -1,17 +1,17 @@
 <template>
   <div>
-    {{banner}}
+    {{newSongs.result}}
   </div>	
 </template>
 
 <script>
 export default{
   asyncData ({ store }) {
-    return store.dispatch('fetchBanner');
+    return store.dispatch('fetchNewSongs');
   },
   computed: {
-    banner (){
-      return this.$store.state.common.banner;
+    newSongs (){
+      return JSON.parse(this.$store.state.common.newSongs);
     }
   }
 }	

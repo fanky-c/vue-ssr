@@ -125,12 +125,12 @@ export default {
   }
   .nextprev > .left:hover
   {
-    background-color: #e64c16;
+    background-color: #4fc08d;
     background-image:  url(../assets/images/left-on.png);
   }
   .nextprev > .right:hover
   {
-    background-color: #e64c16;
+    background-color: #4fc08d;
     background-image: url(../assets/images/right-on.png);
   }
   .searchdiv

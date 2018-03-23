@@ -4,7 +4,6 @@ var VueTooltip={};
 
 
 VueTooltip.onover=function(e){
-
   var el=this;
   var tooltipcolor = "#4fc08d";
   var tooltiptextcolor = "#ffffff";
@@ -14,9 +13,7 @@ VueTooltip.onover=function(e){
   var classname='tooltip top fade';
 
   var temple = '<div style="border-top-color:' + tooltipcolor + '" class="tooltip-arrow"></div><div style="font-size:15px;color:' + tooltiptextcolor + ';background-color:' + tooltipcolor + '" class="tooltip-inner">'+text+'</div>'
-
-
-
+  
   var tooltip=document.createElement("div");
   tooltip.setAttribute("role","tooltip");
   tooltip.innerHTML=temple;
@@ -83,36 +80,23 @@ VueTooltip.onover=function(e){
 
 };
 
-VueTooltip.install=function(Vue){
+VueTooltip.install = function(Vue) {
 
-
-	Vue.directive('vue-tooltip', {
-
-
-      bind: function (el,binding) {
-				if (!ispc()) {
-						return ;
-				}
-
-
-      	var vm=this;
-
-    el.dataset["vuetooltiptext"]=binding.value;
-
-    el.addEventListener("mouseover",VueTooltip.onover)
-
-
-
-
+  Vue.directive('vue-tooltip', {
+    bind: function(el, binding) {
+      if (!ispc()) {
+        return;
       }
-      ,
-      update: function (el,binding) {
+      var vm = this;
 
+      el.dataset["vuetooltiptext"] = binding.value;
 
-    el.dataset["vuetooltiptext"]=binding.value;
-
-      }
-    });
+      el.addEventListener("mouseover", VueTooltip.onover)
+    },
+    update: function(el, binding) {
+      el.dataset["vuetooltiptext"] = binding.value;
+    }
+  });
 
 }
 
