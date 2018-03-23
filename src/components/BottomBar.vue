@@ -55,7 +55,6 @@ export default {
       isplay: false,
       list: [],
       nowData: {},
-      msg: 'Welcome to Your Vue.js App'
     }
   },
   mounted() {
@@ -266,65 +265,5 @@ export default {
 .desc .disk .img {
   width: 100%;
   height: 100%;
-}
-
-
-@media screen and (max-width: 750px){
-  .desc {
-    width: 200px;
-    height: 59px;
-    position: static;
-    top: 0px;
-    padding: 0px;
-    border: none;
-    overflow: hidden;
-  }
-  .slider
-  {
-    width: 100px;
-
-  }
-  .slider
-  {
-    width: 40px;
-
-  }
-
-
-  .desc .disk {
-    border: none;
-    border-radius: 2px;
-    overflow: hidden;
-  }
-  .desc .text {
-    display: inline-block;
-    width: 115px;
-    height: 60px;
-    overflow: hidden;
-    padding-top: 5px;
-  }
-  .desc .text > *{
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    margin: 0px;
-    text-align: left;
-  }
-  .desc .text > h4{
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    margin: 0px;
-    margin-bottom: 5px;
-    font-size: 16px;
-    font-weight: 400;
-  }
-  .desc .text > p{
-    font-size: 12px;
-  }
-  .desc .disk .img {
-    width: 100%;
-    height: 100%;
-  }
 }
 </style>

@@ -1,6 +1,11 @@
 <template>
-  <div>
-    {{newSongs.result}}
+  <div class="container">
+    <ul>
+      <li v-for="item in newSongs.result">
+        <img :src="item.song.album.picUrl" width="150" height="150" />
+        <div class="title">{{item.song.album.name}}</div>
+      </li>
+    </ul>
   </div>	
 </template>
 
@@ -13,6 +18,25 @@ export default{
     newSongs (){
       return JSON.parse(this.$store.state.common.newSongs);
     }
+  },
+  methods: {
+    
   }
 }	
 </script>
+<style scoped>
+.container li{
+  height: auto;
+  width: 150px;
+  cursor: pointer;
+  overflow:hidden;
+  display: inline-block;
+  margin: 0 0px 10px 30px;
+}
+.container li .title{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+}  
+</style>

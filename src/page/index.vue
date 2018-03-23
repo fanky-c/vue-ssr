@@ -80,18 +80,4 @@ export default {
   width: 100%;
   position: absolute;
 }
-
-@media screen and (max-width: 750px){
-  .tablist
-  {
-    width: calc(100%);
-    height: 80px;
-    font-weight: 900;
-  }
-  .main-continer
-  {
-  left: 0px;
-  top: 100px;
-}
-}
 </style>

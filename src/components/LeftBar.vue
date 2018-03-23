@@ -134,10 +134,4 @@ export default {
 .menublock .list.select {
   background-color: #cccccc;
 }
-
-@media screen and (max-width: 750px) {
-  .left-part {
-    display: none;
-  }
-}
 </style>
