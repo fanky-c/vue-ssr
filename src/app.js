@@ -6,6 +6,7 @@ import { sync } from 'vuex-router-sync'
 import titleMixin from './util/title'
 import directive from './directive/index'
 import * as filters from './filter/index'
+import vue$methods from "./vue$methods"
 import axios from "axios"
 
 // mixin
@@ -16,6 +17,8 @@ Vue.use(directive);
 
 // ajax
 // Vue.use(axios);
+
+Vue.use(vue$methods);
 
 // filters
 Object.keys(filters).forEach(key => {

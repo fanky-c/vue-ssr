@@ -7,6 +7,10 @@ const projectRoot = path.resolve(__dirname, '../')
 
 const isProd = process.env.NODE_ENV === 'production'
 
+function resolve (dir) {
+  return path.join(__dirname, '..', dir)
+}
+
 module.exports = {
   devtool: isProd
     ? false
@@ -20,6 +24,8 @@ module.exports = {
     extensions: ['.json', '.js', '.vue', '.less', '.css', '.scss', ' '],
     alias: {
       'public': path.resolve(__dirname, '../public'),
+      'vue$': 'vue/dist/vue.esm.js',
+      '@': resolve('src')      
     }
   },
   module: {
