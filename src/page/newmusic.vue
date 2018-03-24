@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <ul>
-      <li v-for="item in newSongs.result">
+      <li v-for="item in newSongs.result" @click="$playsong(test)">
         <img :src="item.song.album.picUrl" width="150" height="150" />
         <div class="title">{{item.song.album.name}}</div>
       </li>
@@ -11,6 +11,13 @@
 
 <script>
 export default{
+  data(){
+    return {
+      test : [{
+        id: 2151475985
+      }]
+    }
+  },
   asyncData ({ store }) {
     return store.dispatch('fetchNewSongs');
   },
@@ -21,6 +28,9 @@ export default{
   },
   methods: {
     
+  },
+  mounted(){
+
   }
 }	
 </script>

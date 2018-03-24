@@ -1,7 +1,6 @@
 var timefilter = {};
 
 timefilter.install = function(Vue) {
-
   var toString = Object.prototype.toString;
   var OBJECT_STRING = '[object Object]';
 

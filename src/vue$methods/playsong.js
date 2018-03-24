@@ -6,16 +6,11 @@ var timefilter = {};
 
 timefilter.install = function(Vue) {
 
-
-
   Vue.prototype.$playsong = function(list) {
-
-    var ids=[];
-    list.forEach((obj)=>{
-
+    var self = this;
+    var ids = [];
+    list.forEach((obj) => {
       ids.push(obj.id);
-
-
     });
 
     const cryptoreq = crypto({
@@ -23,19 +18,20 @@ timefilter.install = function(Vue) {
       "br": 999000,
       "csrf_token": ""
     });
-    axios.post('music163/weapi/song/enhance/player/url',
+    
+    self.$http.post('music163/weapi/song/enhance/player/url',
       qs.stringify({
         "params": cryptoreq.params,
         "encSecKey": cryptoreq.encSecKey
       })
     ).then(m => {
-
       m.data.data.forEach((obj)=>{
 
           let temp=list.find((value)=>{
 
             return value.id==obj.id;
           })
+          
           temp.url=obj.url;
           temp.artists=temp.artists||temp.ar;
           temp.album=temp.album||temp.al;
