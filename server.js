@@ -67,6 +67,7 @@ const serve = (path, cache) => express.static(resolve(path), {
 //开启gzip压缩
 app.use(compression({ threshold: 0 }))
 app.use('/dist', serve('./dist', true))
+app.use(favicon('./public/github.png'))
 app.use('/public', serve('./public', true))
 
 // since this app has no user-specific content, every page is micro-cacheable.
