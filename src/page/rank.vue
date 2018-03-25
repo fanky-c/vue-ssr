@@ -150,8 +150,7 @@ export default {
   margin-bottom: 20px;
   border: solid 1px #e6e6e6;
 }
-.ranklist2 .continer
-{
+.ranklist2 .continer {
   margin-left:-30px;
   margin-right:-30px;
 }
@@ -198,8 +197,7 @@ export default {
 
   line-height: 30px;
 }
-.ranklist1 .rank1 .more
-{
+.ranklist1 .rank1 .more{
   font-size: 14px;
     color: #666666;
     float: right;
@@ -215,9 +213,7 @@ export default {
   display: inline-block;
 }
 
-
 .ranklist2 .rank2 .rankimg2>span {
-
   height: 20px;
   font-size: 13px;
   color: #ffffff;
@@ -225,14 +221,12 @@ export default {
   top: 0px;
   right: 0px;
   font-weight: 900;
-  /*width: 50%;*/
   background: linear-gradient(-90deg, rgba(50, 50, 50, 0.8), rgba(100, 100, 100, 0.4), rgba(150, 150, 150, 0));
   text-align: right;
   padding-right: 5px;
 }
 
 .ranklist2 .rank2 .rankimg2 span>* {
-
   float: right;
 }
 
