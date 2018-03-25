@@ -16,7 +16,7 @@
 		        <span v-vue-tooltip="'播放 '+li.name" style="font-weight:600;flex-grow: 1;cursor:pointer;" v-on:click="$playsong([li])">{{li.name}}</span>
 		        <span style="width:25%;"><span v-for="(artist,$index) in li.artists"><span style="cursor:pointer"  v-vue-tooltip="'艺人详细 '+artist.name" v-on:click="goArtist(artist.id)">{{artist.name}}</span><span v-if="$index<li.artists.length-1">、</span></span></span>
 		      </div>
-		      <div class="more"  v-vue-tooltip="'查看全部'" v-on:click="goPlaylist(rank.code)">   查看全部
+		      <div class="more"  v-vue-tooltip="'查看全部'" v-on:click="goPlaylist(rank.code)">   查看全部>>
           </div>
 		    </div>
 	    </template>
