@@ -80,7 +80,7 @@ let ranklist = {
       code: "10520166",
       name: " 云音乐电音榜",
       picUrl: "",
-      bkc: "#333333",
+      bkc: "#54b394",
       time: 0,
       list: []
     }

@@ -144,9 +144,7 @@ export default {
 .ranklist1 .rank1 {
   height: 360px;
   width: calc(33.3% - 10px);
-  /*cursor: pointer;*/
   overflow: hidden;
-  /*margin-left: 15px;*/
   display: inline-block;
   float: left;
   margin-bottom: 20px;
@@ -162,9 +160,7 @@ export default {
   width: 150px;
   cursor: pointer;
   overflow: hidden;
-  /*margin-left: 15px;*/
   display: inline-block;
-  /*float: left;*/
   margin-right: 30px;
   margin-left: 30px;
   margin-bottom: 30px;
