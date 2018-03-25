@@ -3,8 +3,12 @@ const path = require('path')
 const MFS = require('memory-fs')
 const webpack = require('webpack')
 const chokidar = require('chokidar')
+const config = require('../config')
 const clientConfig = require('./webpack.client.config')
 const serverConfig = require('./webpack.server.config')
+const proxyMiddleware = require('http-proxy-middleware')
+
+const proxyTable = config.dev.proxyTable
 
 const readFile = (fs, file) => {
   try {
@@ -46,6 +50,17 @@ module.exports = function setupDevServer (app, templatePath, cb) {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin()
   )
+
+  // proxy api requests
+  Object.keys(proxyTable).forEach(function(context) {
+    var options = proxyTable[context]
+    if (typeof options === 'string') {
+      options = {
+        target: options
+      }
+    }
+    app.use(proxyMiddleware(options.filter || context, options))
+  })
 
   // dev middleware
   const clientCompiler = webpack(clientConfig)

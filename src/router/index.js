@@ -20,10 +20,12 @@ export function createRouter() {
 		routes: [{
 			path: '/',
 			redirect: '/index'
-		}, {
+		}, 
+		{
 			path: '*',
 			redirect: '/'
-		}, {
+		}, 
+		{
 			path: '/index',
 			name: 'index',
 			component: Index,

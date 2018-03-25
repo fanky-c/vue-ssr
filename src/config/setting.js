@@ -44,19 +44,6 @@ let searchlist = [
     list: [],
     count: 0
   }
-  // ,
-  // {
-  //   type: "1004",
-  //   limit: 20,
-  //   name: "MV",
-  //   select: false,
-  //   resparams: {
-  //     numstr: "mvCount",
-  //     liststr: "mvs"
-  //   },
-  //   list: [],
-  //   count: 0
-  // }
 ]
 
 let ranklist = {
@@ -187,6 +174,7 @@ let ranklist = {
     }
   ]
 }
+
 export default {
   searchlist,
   ranklist

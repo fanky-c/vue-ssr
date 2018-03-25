@@ -66,8 +66,8 @@ const serve = (path, cache) => express.static(resolve(path), {
 
 //开启gzip压缩
 app.use(compression({ threshold: 0 }))
+//app.use(favicon('./public/favicon.ico'))
 app.use('/dist', serve('./dist', true))
-app.use(favicon('./public/github.png'))
 app.use('/public', serve('./public', true))
 
 // since this app has no user-specific content, every page is micro-cacheable.
@@ -90,7 +90,6 @@ function render (req, res) {
     } else if(err.code === 404) {
       res.status(404).send('404 | Page Not Found')
     } else {
-      // Render Error Page or Redirect
       res.status(500).send('500 | Internal Server Error')
       console.error(`error during render : ${req.url}`)
       console.error(err.stack)

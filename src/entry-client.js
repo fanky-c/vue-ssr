@@ -2,6 +2,7 @@ import Vue from 'vue'
 import 'es6-promise/auto'
 import { createApp } from './app'
 import ProgressBar from './components/ProgressBar.vue'
+import plugin from "./plugin"
 
 // loading
 const progressLoadingbar = Vue.prototype.$bar = new Vue(ProgressBar).$mount()

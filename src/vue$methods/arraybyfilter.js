@@ -86,7 +86,6 @@ timefilter.install = function(Vue) {
     return value;
 
   };
-
 }
 
 export default timefilter

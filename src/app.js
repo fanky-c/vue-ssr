@@ -15,10 +15,6 @@ Vue.mixin(titleMixin)
 // directive
 Vue.use(directive);
 
-
-// Vue.use(axios);
-// window.axios = axios;
-
 // ajax
 Vue.prototype.$http = axios
 

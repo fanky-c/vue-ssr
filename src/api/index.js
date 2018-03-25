@@ -16,7 +16,10 @@ export var fetchBanner = () => {
 	});
 }
 
-//music163/api/discovery/new/songs
+/**
+ * [获取最新音乐]
+ * @return {[type]} [description]
+ */
 export var fetchNewSongs = () => {
   return new Promise(function(resolve, reject) {
     const cookie = ''
@@ -33,7 +36,7 @@ export var fetchNewSongs = () => {
         resolve(result);
       },
       err => {
-        reject('fff');
+        reject(err);
       }
     )
   })
@@ -81,6 +84,7 @@ export var fetchRankById = (id) => {
       })
   })
 }
+
 
 //调用此接口 , 可获取推荐歌单
 export var fetchPersonalized = () => {
