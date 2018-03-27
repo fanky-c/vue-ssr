@@ -25,7 +25,7 @@ export default {
           title: "推荐",
           closed: false,
           list: [{
-              target: "index",
+              target: "/index",
               iconname: "find",
               title: "发现音乐"
             }

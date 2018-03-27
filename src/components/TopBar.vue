@@ -1,6 +1,6 @@
 <template>
   <div class="top-part">
-    <div class="title" v-on:click="$router.push({ name: 'home'});">
+    <div class="title" v-on:click="$router.push({ path: '/'});">
       <span>fanky_c音乐</span>
     </div>
     <div class="nextprevdiv">

@@ -11,7 +11,7 @@
     </div>
     
     <!-- main区域 -->
-    <div id="main-continer">
+    <div id="main-continer" class="main-continer" v-on:scroll="onScroll($event)">
       <router-view></router-view>
     </div>
     
@@ -31,6 +31,14 @@ export default {
     TopBar,
     LeftBar,
     BottomBar,
+  },
+  methods:{
+    onScroll(e){
+        var main=this.$el.getElementsByClassName("main-continer")[0];
+        if (main.scrollTop >= main.scrollHeight - main.offsetHeight) {
+            this.eventer.emit("main-continer-scroll",e);
+        }
+    }    
   }
 }  
 </script>
