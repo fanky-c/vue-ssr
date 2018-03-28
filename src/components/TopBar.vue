@@ -42,11 +42,6 @@ export default {
       this.$router.push({ name: 'search', params: {type:config.setting.searchlist[0].type, str: this.searchString }});
     },
   },
-  watch:{
-    $route(){
-      // console.log(this.$route);
-    }
-  }
 }
 </script>
 

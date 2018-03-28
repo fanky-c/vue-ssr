@@ -7,7 +7,7 @@ VueTooltip.onover=function(e){
   var el=this;
   var tooltipcolor = "#4fc08d";
   var tooltiptextcolor = "#ffffff";
-  var text = '放假科技馆加热管居然看过王嘉尔放假科技馆加热管居然看过王嘉尔放假科技馆加热管居然看过王嘉尔放假科技馆加热管居然看过王嘉尔放假科技馆加热管居然看过王嘉尔放假科技馆加热管居然看过王嘉尔放假科技馆加热管居然看过王嘉尔放假科技馆加热管居然看过王嘉尔放假科技馆加热管居然看过王嘉尔放假科技馆加热管居然看过王嘉尔放假科技馆加热管居然看过王嘉尔放假科技馆加热管居然看过王嘉尔放假科技馆加热管居然看过王嘉尔放假科技馆加热管居然看过王嘉尔放假科技馆加热管居然看过王嘉尔';
+  var text = '';
   text=el.dataset["vuetooltiptext"];
 
   var classname='tooltip top fade';

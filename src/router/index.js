@@ -9,6 +9,7 @@ const Newmusic = () => import ('../page/newmusic.vue');
 const Rank = () => import ('../page/rank.vue');
 const Allplaylist = () => import ('../page/allplaylist.vue');
 const Search = () => import ('../page/search.vue');
+const Playlist = () => import ('../page/playlist.vue');
 
 export function createRouter() {
 	return new VueRouter({
@@ -49,6 +50,10 @@ export function createRouter() {
 			path: '/search/:type/:str',
 			name: 'search',
 			component: Search,
+		}, {
+			path: '/playlist/:id',
+			name: 'playlist',
+			component: Playlist,
 		}]
 	})
 }

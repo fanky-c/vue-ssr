@@ -169,7 +169,7 @@ export default {
     },
   },
   components: {
-    //'Window': () => System.import('@/components/Window'),
+    'Window': () => System.import('@/components/Window'),
     Hotbar,
   },
   watch: {
@@ -178,6 +178,7 @@ export default {
       this.more=false;
       this.offset=0;
       this.tabselect = this.$route.params.type;
+      this.search();
     },
     tabselect(value) {
       if (value == 0) {

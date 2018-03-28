@@ -19,16 +19,15 @@ timefilter.install = function(Vue) {
       "csrf_token": ""
     });
     
-    self.$http.post('music163/weapi/song/enhance/player/url',
+    self.$http.post('/music163/weapi/song/enhance/player/url',
       qs.stringify({
         "params": cryptoreq.params,
         "encSecKey": cryptoreq.encSecKey
       })
     ).then(m => {
       m.data.data.forEach((obj)=>{
-
+        
           let temp=list.find((value)=>{
-
             return value.id==obj.id;
           })
           
