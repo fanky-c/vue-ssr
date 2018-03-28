@@ -1,5 +1,5 @@
-import "./tooltip.css"
-import ispc from  "../util/ispc"
+import "./style.css"
+import ispc from  "@/util/ispc"
 var VueTooltip={};
 
 

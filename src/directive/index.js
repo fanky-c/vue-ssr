@@ -1,5 +1,5 @@
-import tooltip from './Tooltip'
-import toast from './Toast'
+import tooltip from './tooltip'
+import toast from './toast'
 
 export default {
 	install: function(Vue) {

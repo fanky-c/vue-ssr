@@ -1,4 +1,4 @@
-import "./toast.css"
+import "./style.css"
 var VueToast = {};
 
 VueToast.install = function(Vue) {
