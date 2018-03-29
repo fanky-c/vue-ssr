@@ -102,7 +102,7 @@
     height: 100%;
     position: absolute;
     border-radius: 5px;
-    background-color: #e62222;
+    background-color: #a6a6a6;
   }
   .sliderT
   {

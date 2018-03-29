@@ -10,6 +10,8 @@ const Rank = () => import ('../page/rank.vue');
 const Allplaylist = () => import ('../page/allplaylist.vue');
 const Search = () => import ('../page/search.vue');
 const Playlist = () => import ('../page/playlist.vue');
+const Album = () => import ('../page/album.vue');
+const Artist = () => import ('../page/artist.vue');
 
 export function createRouter() {
 	return new VueRouter({
@@ -21,12 +23,10 @@ export function createRouter() {
 		routes: [{
 			path: '/',
 			redirect: '/index'
-		}, 
-		{
+		}, {
 			path: '*',
 			redirect: '/'
-		}, 
-		{
+		}, {
 			path: '/index',
 			name: 'index',
 			component: Index,
@@ -54,6 +54,14 @@ export function createRouter() {
 			path: '/playlist/:id',
 			name: 'playlist',
 			component: Playlist,
+		},{
+			path: '/album/:id',
+			name: 'album',
+			component: Album,
+		}, {
+			path: '/artist/:id',
+			name: 'artist',
+			component: Artist,
 		}]
 	})
 }
