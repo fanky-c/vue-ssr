@@ -3,7 +3,9 @@
   <div class="f-loading" v-show="show">
     <div class="loading-mask" v-show="isShowMask"></div>
     <transition :name="translate">
-      <div class="container" v-show="show"></div>
+      <div class="container" v-show="show">
+        <img src="./imgs/oval.svg">
+      </div>
     </transition>
   </div>
 </transition>    

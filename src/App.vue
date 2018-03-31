@@ -26,6 +26,7 @@
 import TopBar from './components/TopBar.vue';
 import LeftBar from './components/LeftBar.vue';
 import BottomBar from './components/BottomBar.vue';
+
 export default {
   components:{
     TopBar,
@@ -39,7 +40,7 @@ export default {
             this.eventer.emit("main-continer-scroll",e);
         }
     }    
-  },
+  }
 }  
 </script>
 <style>
