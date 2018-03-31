@@ -16,7 +16,7 @@ Vue.mixin(titleMixin)
 Vue.use(directive);
 
 // ajax
-Vue.prototype.$http = axios
+Vue.prototype.$http = axios;
 
 // vue$methods
 Vue.use(vue$methods);
@@ -27,6 +27,7 @@ Object.keys(filters).forEach(key => {
 })
 
 
+//vue  实例对象
 export function createApp () {
   const store = createStore()
   const router = createRouter()

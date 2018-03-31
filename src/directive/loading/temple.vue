@@ -43,9 +43,10 @@ export default{
       return 'fadeIn'
      }
     }
-  }
+ },
 }  
 </script>
+
 <style lang="scss" scoped>
 @import './index';  
 </style>
