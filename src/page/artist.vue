@@ -332,6 +332,7 @@ a {
   margin-top: 7px;
   flex-grow: 0;
   flex-shrink: 0;
+  text-align: center;
 }
 
 .title {

@@ -51,7 +51,6 @@ export default {
       this.select = this.$route.matched && this.$route.matched[0] && this.$route.matched[0].name;
       console.log('select:' , this.select)
     }
-
   }
 }
 </script>

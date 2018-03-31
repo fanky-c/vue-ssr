@@ -49,7 +49,7 @@
       </span>
       </span>
       <span style="width:10%">{{li.dt | timefilter1000}}</span>
-      <span style="width:20%;padding-top: 10px;"><hotbar :len="li.pop/100"></hotbar></span>
+      <span style="width:20%;padding-top: 10px;"><HotBar :len="li.pop/100"></HotBar></span>
 
     </p>
   </div>
@@ -65,7 +65,7 @@
 <script>
 import qs from "qs"
 import crypto from "@/util/crypto"
-import hotbar from "@/components/HotBar"
+import HotBar from "@/components/HotBar"
 export default {
   name: 'album',
   data() {
@@ -120,7 +120,7 @@ export default {
 
   },
   components: {
-    hotbar
+    HotBar,
   },
   mounted() {
     this.expended = false;

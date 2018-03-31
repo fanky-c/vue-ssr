@@ -32,7 +32,7 @@
             <span style="cursor:pointer;width:25%" v-vue-tooltip="'前往专辑 '+li.album.name" v-on:click="goAlbum(li.album.id)">{{li.album.name}}</span>
 
             <span style="width:100px">{{li.duration | timefilter1000}}</span>
-            <span style="width:100px;padding-top: 10px;"><hotbar :len="li.popularity/100"></hotbar></span>
+            <span style="width:100px;padding-top: 10px;"><HotBar :len="li.popularity/100"></HotBar></span>
           </p>
         </template>
 
@@ -84,7 +84,7 @@
 <script>
 import qs from "qs"
 import config from "@/config"
-import Hotbar from '@/components/Hotbar'
+import HotBar from '@/components/HotBar'
 export default {
   data() {
     return {
@@ -170,7 +170,7 @@ export default {
   },
   components: {
     'Window': () => System.import('@/components/Window'),
-    Hotbar,
+    HotBar,
   },
   watch: {
     $route() {

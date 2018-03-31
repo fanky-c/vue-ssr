@@ -39,7 +39,7 @@ export default {
             this.eventer.emit("main-continer-scroll",e);
         }
     }    
-  }
+  },
 }  
 </script>
 <style>

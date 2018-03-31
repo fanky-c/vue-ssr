@@ -6,8 +6,8 @@
 
 <script>
 	export default {
-		name: 'hotbar',
-		props: ['len'],
+		name: 'HotBar',
+		props: ['len']
 	}
 
 </script>
