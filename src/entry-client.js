@@ -43,7 +43,7 @@ const { app, router, store } = createApp()
 
 // Add a request interceptor
 axios.interceptors.request.use(function(config) {
-  app.progress.progressing = true;;
+  app.progress.progressing = true;
   return config;
 }, function(error) {
   app.progress.progressing = false;
@@ -86,7 +86,6 @@ router.onReady(() => {
       })
       .catch(next)
   })
-
   app.$mount('#app')
 })
 

@@ -1,4 +1,3 @@
-
 <template>
   <div class="progress" :style="{
     'width': percent+'%',

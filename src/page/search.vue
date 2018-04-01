@@ -1,5 +1,6 @@
 <template>
 <div>
+{{progress}}
   <div class="searchlist">
     <div class="searchresult">
       <h6 v-for="list in searchlist" v-if="tabselect==list.type">
