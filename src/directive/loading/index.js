@@ -1,5 +1,6 @@
 import LoadTpl from './temple.vue'; 
 var Loading = {}; // 定义插件对象
+var $vm = null;
 
 //console.log('当前的环境：' ,process.env.VUE_ENV);
 
@@ -10,7 +11,7 @@ Loading.install = function(Vue){
 
           let loadingTpl = Vue.extend(LoadTpl) // 创建vue构造器
 
-          let $vm = new loadingTpl() // 实例化vue实例
+          $vm = new loadingTpl() // 实例化vue实例
 
           let tpl = $vm.$mount().$el;
 

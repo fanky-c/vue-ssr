@@ -14,7 +14,7 @@
     <div id="main-continer" class="main-continer" v-on:scroll="onScroll($event)">
       <router-view></router-view>
     </div>
-    
+
     <!-- 底部播放器 -->
     <div id="bottom-continer">
       <BottomBar></BottomBar>
@@ -40,7 +40,7 @@ export default {
             this.eventer.emit("main-continer-scroll",e);
         }
     }    
-  }
+  },
 }  
 </script>
 <style>

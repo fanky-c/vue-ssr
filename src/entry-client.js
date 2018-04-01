@@ -3,6 +3,7 @@ import 'es6-promise/auto'
 import { createApp } from './app'
 import ProgressBar from './components/ProgressBar.vue'
 import plugin from "./plugin"
+import axios from "axios"
 
 // loading
 const progressLoadingbar = Vue.prototype.$bar = new Vue(ProgressBar).$mount()
@@ -10,6 +11,21 @@ document.body.appendChild(progressLoadingbar.$el)
 
 // a global mixin that calls `asyncData` when a route component's params change
 Vue.mixin({
+  data() {
+    return {
+      progress: {
+        progressing: false,
+        firstprogressing: false
+      },
+      eventer: {
+        emit: null,
+        on: null,
+        off: null,
+        _events: Object.create(null),
+        _hasHookEvent: false
+      }
+    }
+  },
   beforeRouteUpdate (to, from, next) {
     const { asyncData } = this.$options
     if (asyncData) {
@@ -24,6 +40,25 @@ Vue.mixin({
 })
 
 const { app, router, store } = createApp()
+
+// Add a request interceptor
+axios.interceptors.request.use(function(config) {
+  app.progress.progressing = true;;
+  return config;
+}, function(error) {
+  app.progress.progressing = false;
+  return Promise.reject(error);
+});
+
+// Add a response interceptor
+axios.interceptors.response.use(function(response) {
+  app.progress.progressing = false;
+  return response;
+}, function(error) {
+  app.progress.progressing = false;
+  return Promise.reject(error);
+});
+
 
 if (window.__INITIAL_STATE__) {
   store.replaceState(window.__INITIAL_STATE__)

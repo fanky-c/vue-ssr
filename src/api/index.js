@@ -28,7 +28,7 @@ export var fetchNewSongs = () => {
     }
     createWebAPIRequest(
       'music.163.com',
-      '/api/personalized/newsong',
+      '/api/discovery/new/songs',
       'POST',
       data,
       cookie,

@@ -64,9 +64,13 @@ export default {
       this.list=list;
     }
     Vue.playMp3 = (list) => {
-      this.mp3Url = list[0].url;
-      this.nowData = list[0];
-      this.list=list;
+      if(list[0].url){
+        this.mp3Url = list[0].url;
+        this.nowData = list[0];
+        this.list=list;
+      }else{
+        alert('播放失败');
+      }
     }
     this.audio = this.$el.getElementsByTagName('audio')[0];
     this.audio.volume = this.volume;
@@ -242,6 +246,7 @@ export default {
   height: 60px;
   overflow: hidden;
   padding-top: 5px;
+  padding-left: 5px;
 }
 .desc .text > *{
   overflow: hidden;
