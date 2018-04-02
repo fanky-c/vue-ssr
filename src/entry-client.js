@@ -43,18 +43,22 @@ const { app, router, store } = createApp()
 
 // Add a request interceptor
 axios.interceptors.request.use(function(config) {
+  app.$loading.show();
   app.progress.progressing = true;
   return config;
 }, function(error) {
+  app.$loading.hide();
   app.progress.progressing = false;
   return Promise.reject(error);
 });
 
 // Add a response interceptor
 axios.interceptors.response.use(function(response) {
+  app.$loading.hide();
   app.progress.progressing = false;
   return response;
 }, function(error) {
+  app.$loading.hide();
   app.progress.progressing = false;
   return Promise.reject(error);
 });
