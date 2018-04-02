@@ -226,6 +226,7 @@ a {
   margin-top: 7px;
   flex-grow: 0;
   flex-shrink: 0;
+  text-align: center;
 }
 
 .title {
@@ -348,5 +349,6 @@ a {
   height: 20px;
   width: 150px;
   line-height: 20px;
+  outline: 0;
 }
 </style>
