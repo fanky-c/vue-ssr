@@ -306,5 +306,6 @@ a {
   height: 20px;
   width: 150px;
   line-height: 20px;
+  outline: 0;
 }
 </style>

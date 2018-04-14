@@ -2,7 +2,7 @@
   <div class="container">
     <ul>
       <li v-for="item in newSongs.data" @click="$playsong([Object.assign({}, item)])">
-        <img :src="item.album.picUrl" width="150" height="150" />
+        <img v-lazy="item.album.picUrl" width="150" height="150" />
         <div class="title">{{item.album.name}}</div>
       </li>
     </ul>

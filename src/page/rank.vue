@@ -25,7 +25,8 @@
 	    <div class="continer">
 	      <template v-for="(rank,$index) in ranklist.rank2" v-if="type==2">
   			  <div class="rank2 disk"  v-if="rank.count">
-  			    <div class="rankimg2" :style="{background:'url('+rank.picUrl+'?param=150y150) no-repeat 0px 0px'}"   v-on:click="goPlaylist(rank.code)">
+  			    <div class="rankimg2"  v-on:click="goPlaylist(rank.code)">
+                <img v-lazy="rank.picUrl" width="150" height="150" />
   			        <span>
   			          <span>{{Math.ceil(rank.count/10000)}}万</span>
   			          <div class="counticon"></div>

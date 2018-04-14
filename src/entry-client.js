@@ -4,10 +4,18 @@ import { createApp } from './app'
 import ProgressBar from './components/ProgressBar.vue'
 import plugin from "./plugin"
 import axios from "axios"
+import VueLazyload from 'vue-lazyload'
 
 // loading
 const progressLoadingbar = Vue.prototype.$bar = new Vue(ProgressBar).$mount()
 document.body.appendChild(progressLoadingbar.$el)
+
+//img lazyload
+Vue.use(VueLazyload, {
+  error: require('./assets/images/404.jpg'),
+  loading: require('./assets/images/loading.gif'),
+  try: 2 // default 1
+})
 
 // a global mixin that calls `asyncData` when a route component's params change
 Vue.mixin({
