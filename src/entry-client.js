@@ -11,6 +11,8 @@ const progressLoadingbar = Vue.prototype.$bar = new Vue(ProgressBar).$mount()
 document.body.appendChild(progressLoadingbar.$el)
 
 //img lazyload
+//生产占位图
+//http://www.gbtags.com/gb/laitu/300x200&text=music/242424/ffffff
 Vue.use(VueLazyload, {
   error: require('./assets/images/404.jpg'),
   loading: require('./assets/images/loading.gif'),

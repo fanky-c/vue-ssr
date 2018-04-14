@@ -11,13 +11,6 @@
 
 <script>
 export default{
-  data(){
-    return {
-      test : [{
-        id: 2151475985
-      }]
-    }
-  },
   asyncData ({ store }) {
     return store.dispatch('fetchNewSongs');
   },
@@ -26,12 +19,6 @@ export default{
       return JSON.parse(this.$store.state.common.newSongs);
     }
   },
-  methods: {
-    
-  },
-  mounted(){
-
-  }
 }	
 </script>
 <style scoped>
