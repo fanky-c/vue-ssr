@@ -3,7 +3,7 @@
   <!-- <h1>playlist</h1> -->
   <div class="main">
 
-    <div class="coverImg disk"><img :src="playlistdata.coverImgUrl"></img>
+    <div class="coverImg disk"><img v-lazy="playlistdata.coverImgUrl" /></img>
     </div>
     <div class="playlistDesc">
       <h2 class="title"><span class="mark">歌单</span><span style="    flex-grow: 1;
