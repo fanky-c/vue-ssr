@@ -120,7 +120,7 @@ export default {
     },    
   },
   mounted() {
-    //this.eventer.on("main-continer-scroll",this.onScroll);
+    this.eventer.on("main-continer-scroll",this.onScroll);
     document.addEventListener("click",()=>{this.alltagsshow=false;});
     this.$http.get('/music163/api/playlist/hottags',{}).then(m=>{
       if (m.status == 200 && m.data.code == 200 && m.data.tags) {
@@ -135,7 +135,7 @@ export default {
     this.search();
   },
   beforeDestroy(){
-      //this.eventer.off("main-continer-scroll");
+      this.eventer.off("main-continer-scroll");
       document.removeEventListener("click", ()=>{});
       this.source.cancel("aaaa");
   }    

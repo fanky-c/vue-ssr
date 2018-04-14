@@ -261,12 +261,12 @@ export default {
   components: {
   },
   mounted() {
-    //this.eventer.on("main-continer-scroll",this.onScroll);
+    this.eventer.on("main-continer-scroll",this.onScroll);
     this.search();
     this.tabselect = this.searchlist[0].type;
   },  
   beforeDestroy(){
-    //this.eventer.off("main-continer-scroll");
+    this.eventer.off("main-continer-scroll");
 
   },
 }

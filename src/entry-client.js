@@ -14,24 +14,27 @@ document.body.appendChild(progressLoadingbar.$el)
 Vue.use(VueLazyload, {
   error: require('./assets/images/404.jpg'),
   loading: require('./assets/images/loading.gif'),
-  try: 2 // default 1
+  try: 2
 })
 
 // a global mixin that calls `asyncData` when a route component's params change
+let progress = {
+  progressing: false,
+  firstprogressing: false
+}
+let eventer = {
+  emit: null,
+  on: null,
+  off: null,
+  _events: Object.create(null),
+  _hasHookEvent: false
+};
+
 Vue.mixin({
   data() {
     return {
-      progress: {
-        progressing: false,
-        firstprogressing: false
-      },
-      eventer: {
-        emit: null,
-        on: null,
-        off: null,
-        _events: Object.create(null),
-        _hasHookEvent: false
-      }
+      progress: progress,
+      eventer: eventer
     }
   },
   beforeRouteUpdate (to, from, next) {
@@ -48,6 +51,10 @@ Vue.mixin({
 })
 
 const { app, router, store } = createApp()
+
+eventer.emit = app.$emit;
+eventer.on = app.$on;
+eventer.off = app.$off;
 
 // Add a request interceptor
 axios.interceptors.request.use(function(config) {

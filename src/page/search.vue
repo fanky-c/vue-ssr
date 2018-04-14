@@ -201,7 +201,7 @@ export default {
     }
   },
   mounted() {
-    //this.eventer.on("main-continer-scroll",this.onScroll);
+    this.eventer.on("main-continer-scroll",this.onScroll);
     this.searchlist.forEach((l)=>{l.list=[]});
     this.more=false;
     this.offset=0;
@@ -210,7 +210,7 @@ export default {
 
   },  
   beforeDestroy(){
-    //this.eventer.off("main-continer-scroll");
+    this.eventer.off("main-continer-scroll");
   }  
 }
 </script>
