@@ -16,7 +16,7 @@ document.body.appendChild(progressLoadingbar.$el)
 Vue.use(VueLazyload, {
   error: require('./assets/images/404.jpg'),
   loading: require('./assets/images/loading.gif'),
-  try: 2
+  try: 3
 })
 
 // a global mixin that calls `asyncData` when a route component's params change
