@@ -468,18 +468,22 @@ background-size: 80%;
     margin-left: 30px;
     margin-right: 30px;
     text-align: left;
-
+    padding-top: 10px;
+    padding-bottom: 10px;
 
 }
 .artistinfo h5
 {
     font-size: 16px;
     font-weight: 500;
+    padding-bottom: 10px;
+    padding-top: 10px;
 
 }
 .artistinfo p
 {
     font-size: 14px;
+    line-height: 150%;
 }
 .searchinput {
   border-radius: 10px;

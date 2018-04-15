@@ -3,8 +3,8 @@
   <div class="menublock" :class="{closed:menu.closed}" v-for="menu in menulist">
     <h6 v-on:click="menulist.forEach((m)=>{m.closed=true});menu.closed=false;">{{menu.title}}</h6>
     <div class="listcontiner" :style="{'height':menu.list.length*30+'px'}">
-      <div class="list" :class="{select:(select==li.target)}" v-for="li in menu.list" v-on:click="li.target?go(li.target):(li.onclick?doclick(li.onclick):'')">
-        <div class="selectmark" v-show="(select==li.target)"></div>
+      <div class="list" :class="{select:(select==li.className)}" v-for="li in menu.list" v-on:click="li.target?go(li.target):(li.onclick?doclick(li.onclick):'')">
+        <div class="selectmark" v-show="(select==li.className)"></div>
         <div :class="li.iconname" class="icon"></div>
         <div class="title">{{li.title}}</div>
       </div>
@@ -26,6 +26,7 @@ export default {
           closed: false,
           list: [{
               target: "/index",
+              className: 'index',
               iconname: "find",
               title: "发现音乐"
             }
@@ -44,7 +45,6 @@ export default {
     doclick(str) {
       eval(str);
     }
-
   },
   watch: {
     $route() {
