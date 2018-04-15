@@ -1,6 +1,5 @@
 <template>
   <div class="container">
-  {{newSongs}}
     <ul>
       <li v-for="item in newSongs.data" @click="$playsong([Object.assign({}, item)])">
         <img v-lazy="item.album.picUrl" width="150" height="150" />

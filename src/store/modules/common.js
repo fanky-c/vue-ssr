@@ -19,9 +19,11 @@ const actions = {
 		})
 	},
   fetchNewSongs({ commit }) {
+    if(process.env.VUE_ENV == 'server'){
     return api.fetchNewSongs().then(msg => {
       commit('setNewSongs', { msg })
-    })    
+    }) 
+    }   
   },
   fetchPersonalized({ commit }){
     return api.fetchPersonalized().then(msg => {
