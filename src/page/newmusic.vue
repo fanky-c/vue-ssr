@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+  {{newSongs}}
     <ul>
       <li v-for="item in newSongs.data" @click="$playsong([Object.assign({}, item)])">
         <img v-lazy="item.album.picUrl" width="150" height="150" />
@@ -11,14 +12,19 @@
 
 <script>
 export default{
+  data(){
+    return {
+      newSongs : JSON.parse(this.$store.state.common.newSongs || '{}'), 
+    }
+  },
   asyncData ({ store }) {
     return store.dispatch('fetchNewSongs');
   },
-  computed: {
-    newSongs (){
-      return JSON.parse(this.$store.state.common.newSongs);
-    }
-  },
+  // computed: {
+  //   newSongs (){
+  //     return JSON.parse(this.$store.state.common.newSongs || '{}');
+  //   }
+  // }
 }	
 </script>
 <style scoped>

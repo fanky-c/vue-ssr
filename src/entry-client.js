@@ -15,7 +15,7 @@ document.body.appendChild(progressLoadingbar.$el)
 //http://www.gbtags.com/gb/laitu/300x200&text=music/242424/ffffff
 Vue.use(VueLazyload, {
   error: require('./assets/images/404.jpg'),
-  loading: require('./assets/images/loading.gif'),
+  loading: require('./assets/images/default.png'),
   try: 3
 })
 
