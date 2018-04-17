@@ -95,9 +95,10 @@ function render (req, res) {
       console.error(err.stack)
     }
   }
-
+  
+  //entry-server.js有用
   const context = {
-    title: 'fanky_c音乐', // default title
+    title: 'fanky_c音乐',
     url: req.url
   }
   renderer.renderToString(context, (err, html) => {
@@ -115,7 +116,7 @@ app.get('*', isProd ? render : (req, res) => {
   readyPromise.then(() => render(req, res))
 })
 
-const port = process.env.PORT || 8787
+const port = process.env.PORT || 8787;
 app.listen(port, () => {
   console.log(`server started at localhost:${port}`)
 })

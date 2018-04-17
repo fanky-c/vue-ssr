@@ -8,7 +8,7 @@ import VueLazyload from 'vue-lazyload'
 
 // loading
 const progressLoadingbar = Vue.prototype.$bar = new Vue(ProgressBar).$mount()
-document.body.appendChild(progressLoadingbar.$el)
+document.body.appendChild(progressLoadingbar.$el);
 
 //img lazyload
 //生产占位图

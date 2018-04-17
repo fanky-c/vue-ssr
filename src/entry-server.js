@@ -1,7 +1,8 @@
 import { createApp } from './app'
 
-const isDev = process.env.NODE_ENV !== 'production'
+const isDev = process.env.NODE_ENV !== 'production';
 
+//服务端传递过来的context参数
 export default context => {
   return new Promise((resolve, reject) => {
     const s = isDev && Date.now()
@@ -17,7 +18,7 @@ export default context => {
     router.push(url)
 
     router.onReady(() => {
-      const matchedComponents = router.getMatchedComponents()
+      const matchedComponents = router.getMatchedComponents(); //获取当前url的所有组件
 
       if (!matchedComponents.length) {
         return reject({ code: 404 })
