@@ -23,9 +23,9 @@
 |- node_modules node包文件
 |- public 公共静态资源
 |- build 开发环境和生产环境打包配置
-    |- setup-dev-server 开发启动服务器
-    |- webpack.client.config 浏览器端配置
-    |- webpack.server.config  服务器端配置
+    |- setup-dev-server 开发环境启动服务器
+    |- webpack.client.config  打包浏览器端配置
+    |- webpack.server.config  打包服务器端配置
 |- dist 打包之后文件所在位置
 |- doc 项目说明文档
     |- dev              
