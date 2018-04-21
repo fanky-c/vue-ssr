@@ -47,7 +47,7 @@ module.exports = {
         loader: 'url-loader',
         options: {
           limit: 10000,
-          name: '[name].[ext]?[hash]'
+          name: 'images/[name].[ext]?[hash]'
         }
       },
       {
@@ -62,8 +62,11 @@ module.exports = {
     ]
   },
   performance: {
-    maxEntrypointSize: 300000,
-    hints: isProd ? 'warning' : false
+    // maxEntrypointSize: 400000, //入口起点的最大体积
+    // hints: isProd ? 'warning' : false,
+    // assetFilter: function(assetFilename){ //只匹配js文件
+    //   return assetFilename.endsWith('.js');
+    // }
   },
   plugins: isProd
     ? [
@@ -72,7 +75,7 @@ module.exports = {
         }),
         new webpack.optimize.ModuleConcatenationPlugin(),
         new ExtractTextPlugin({
-          filename: 'common.[chunkhash].css'
+          filename: 'css/common.[chunkhash].css'
         })
       ]
     : [

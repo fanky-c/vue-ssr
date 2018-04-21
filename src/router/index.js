@@ -4,6 +4,7 @@ import VueRouter from 'vue-router'
 
 Vue.use(VueRouter);
 
+//const Index = r => require.ensure([], () => r(require('../page/index.vue')), 'index');
 const Index = () => import ('../page/index.vue');
 const Newmusic = () => import ('../page/newmusic.vue');
 const Rank = () => import ('../page/rank.vue');

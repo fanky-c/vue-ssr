@@ -3,6 +3,7 @@ const merge = require('webpack-merge')
 const base = require('./webpack.base.config')
 const SWPrecachePlugin = require('sw-precache-webpack-plugin')
 const VueSSRClientPlugin = require('vue-server-renderer/client-plugin')
+const ImageminPlugin = require('imagemin-webpack-plugin').default;
 
 const config = merge(base, {
   entry: {
@@ -56,6 +57,13 @@ if (process.env.NODE_ENV === 'production') {
           handler: 'networkFirst'
         }
       ]
+    })
+  )
+  config.plugins.push(
+    new ImageminPlugin({
+      pngquant: {
+        quality: '95-100'
+      }
     })
   )
 }
