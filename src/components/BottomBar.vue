@@ -20,13 +20,15 @@
 
   <div class="desc" v-show="nowData.album&&nowData.name&&nowData.artists">
     <div class="disk">
-      <div class="img" :style="{background:'url('+(nowData.album&&nowData.album.picUrl)+'?param=60y60) no-repeat 0px 0px'}" v-on:click="Full()"></div>
+      <div class="img" @click="Full()" v-if="nowData.album">
+        <img v-lazy="nowData.album.picUrl" width="60" height="60" />
+      </div>    
     </div>
     <div class="text">
       <h4>{{nowData.name}}</h4>
       <p>
         <span v-for="(artist,$index) in nowData.artists">
-          <span  style="cursor:pointer" v-on:click="goArtist(artist.id)">{{artist.name}}</span>
+          <span  style="cursor:pointer" @click="goArtist(artist.id)">{{artist.name}}</span>
           <span v-if="$index<nowData.artists.length-1">/</span>
         </span>
       </p>

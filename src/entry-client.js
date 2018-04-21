@@ -81,6 +81,8 @@ axios.interceptors.response.use(function(response) {
 });
 
 
+//这句的作用是如果服务端的vuex数据发生改变，就将客户端的数据替换掉，
+//保证客户端和服务端的数据同步
 if (window.__INITIAL_STATE__) {
   store.replaceState(window.__INITIAL_STATE__)
 }

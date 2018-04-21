@@ -61,6 +61,7 @@ export default {
   height: 100%;
   position: absolute;
   font-size: 16px;
+  overflow: hidden;
 }
 
 #main-continer {
