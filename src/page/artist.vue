@@ -272,7 +272,6 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 h1,
 h2 {
@@ -512,14 +511,14 @@ background-size: 80%;
   min-width: 80px;
   color: #121212;
   background-color: #f4f4f4;
-
   border: solid 1px #ababab;
   border-bottom: none;
   margin-bottom: -1px;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background-color 0.5s
+  transition: background-color 0.5s;
+  cursor: pointer;
 }
 
 .tablist>.tab.select {

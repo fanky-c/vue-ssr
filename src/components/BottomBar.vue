@@ -18,7 +18,7 @@
     <slider class="slider2" :length.sync="volume" max="1" :realtime="true"></slider>
   </div>
 
-  <div class="desc" v-show="nowData.album&&nowData.name&&nowData.artists">
+  <div class="desc" v-if="nowData.album&&nowData.name&&nowData.artists">
     <div class="disk">
       <div class="img" @click="Full()" v-if="nowData.album">
         <img v-lazy="nowData.album.picUrl" width="60" height="60" />

@@ -245,7 +245,8 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background-color 0.5s
+  transition: background-color 0.5s;
+  cursor: pointer;
 }
 
 .tablist>.tab.select {
