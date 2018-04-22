@@ -82,7 +82,6 @@ export default {
   },
   methods: {
     playORpause() {
-
       if (this.audio.paused) {
         this.audio.play();
       } else {
@@ -91,18 +90,15 @@ export default {
 
     },
     setReadyduration() {
-      console.log("a");
       this.readyduration = this.audio.buffered.end(this.audio.buffered.length - 1);
     },
     goArtist(id) {
-
       this.$router.push({
         name: 'artist',
         params: {
           id: id
         }
       });
-
     },
   },
   computed: {

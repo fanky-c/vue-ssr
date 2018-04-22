@@ -39,6 +39,13 @@ export default {
 
     },
     search(){
+      if(!this.searchString.trim()){
+        this.$toast.show({
+          text: '请输入搜索音乐、歌手、歌单、专辑',
+          type: 'error'
+        })
+        return;
+      }
       this.$router.push({ name: 'search', params: {type:config.setting.searchlist[0].type, str: this.searchString }});
     },
   }, 
