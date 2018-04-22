@@ -45,8 +45,7 @@ export default {
 </script>
 <style lang="scss">
 @import './commons/sass/base/global.scss';
-#app {
-  font: 12px Arial,"Microsoft YaHei",Malgun Gothic,Meiryo,sans-serif;
+#app { 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;

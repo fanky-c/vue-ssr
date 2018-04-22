@@ -29,11 +29,7 @@ html{
     -o-box-sizing: content-box; /*Opera9.6*/
     box-sizing:border-box;
 }
-input, textarea, select {
-    font-family: inherit;
-    font-size: inherit;
-    font-weight: inherit; 
-}
+
 button,
 input[type="button"],
 input[type="reset"],
@@ -49,10 +45,6 @@ input[disabled] {
 img {
     image-rendering: optimizeQuality;
     -ms-interpolation-mode: bicubic;
-}
-
-lable{
-    cursor: pointer;
 }
 
 input:-webkit-autofill,

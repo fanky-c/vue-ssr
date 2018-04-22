@@ -4,9 +4,7 @@
 @import "../../../assets/icons/style.scss";
 
 body{
-  font: 14px Arial,"Microsoft YaHei","\5fae\8f6f\96c5\9ed1","\5b8b\4f53",Malgun Gothic,Meiryo,sans-serif;
-  line-height: 1;
-  color: #2e3033;
+  font: 12px Arial,"Microsoft YaHei",Malgun Gothic,Meiryo,sans-serif;
   word-break: break-word;
 }
 
@@ -207,16 +205,5 @@ a:hover{
   &:hover{
     color: #ffffff;
   }
-}
-
-/* voice */
-.icon-voice{
- color: #db3e3e;
- &.active{
-  color: $lightGrayColor; 
- } 
- &:hover{
-  color: $lightGrayColor;
- }  
 }
 
