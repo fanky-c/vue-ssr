@@ -23,7 +23,7 @@
                 <div class="counticon"></div>
               </span>
             </div>
-            <span>{{rank.name}}</span>
+            <span class="nameTxt">{{rank.name}}</span>
           </div>
         </template>
 
@@ -189,7 +189,6 @@ export default {
   height: 150px;
   width: 150px;
   position: relative;
-
   background-size: contain !important;
   border: solid 1px #e6e6e6;
 }
@@ -211,6 +210,16 @@ export default {
   background: linear-gradient(-90deg,rgba(50,50,50,0.8),rgba(100,100,100,0.4),rgba(150,150,150,0));
   text-align: right;
   padding-right: 5px;
+}
+.ranklist2 .rank2 .nameTxt{
+  display: block;
+  height: 30px;
+  line-height: 30px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin-top: 5px;
+  margin-bottom: 20px;
 }
 .ranklist2 .rank2 .rankimg2 span > *{
   float: right;

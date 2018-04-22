@@ -41,6 +41,11 @@ export default {
         }
     }    
   },
+  mounted(){
+    this.$toast.show({
+      text: 'loading',
+    })
+  }
 }  
 </script>
 <style>

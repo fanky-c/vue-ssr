@@ -1,0 +1,89 @@
+#f-toast{
+  position : fixed;
+  width : 194px;
+  text-align : center;
+  font-size : 14px;
+  color : #FFF;
+  border-radius : 4px;
+  z-index : 99;
+  background-color : #fff;
+  box-shadow: 0 2px 20px #B0B0B0;
+  //垂直居中 - start
+  top : 0;
+  left : 0;
+  right: 0;
+  bottom: 0;
+  display: table;
+  margin: auto;
+  //垂直居中 - end
+  
+  .container{
+    padding: 24px 10px;
+  }
+  
+
+  em{
+    display: inline-block;
+    font-size: 18px;
+    margin-bottom: 14px;
+
+
+    &.icon-success{
+      color: #68B018;
+    }
+  
+    &.icon-warn{
+      color: #FF933F;
+    }
+
+    &.icon-error{
+      color: #F44C4C;
+    }
+
+  }
+
+
+  .f-toast-msg{
+    color: #37393C;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+ .alert-mask{
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0,0,0,.5);
+  z-index: 4999;
+ }  
+}
+
+ .fadeIn-enter-active, .fadeIn-leave-active{
+  transition: opacity .3s;
+ }
+ .fadeIn-enter, .fadeIn-leave-active{
+  opacity: 0;
+ }
+ .translate-top-enter-active, .translate-top-leave-active{
+  transition: all 0.3s cubic-bezier(.36,.66,.04,1);
+ }
+ .translate-top-enter, .translate-top-leave-active{
+  transform: translateY(-50%);
+  opacity: 0;
+ }
+ .translate-middle-enter-active, .translate-middle-leave-active{
+  transition: all 0.3s cubic-bezier(.36,.66,.04,1);
+ }
+ .translate-middle-enter, .translate-middle-leave-active{
+  transform: translateY(80%);
+  opacity: 0;
+ }
+ .translate-bottom-enter-active, .translate-bottom-leave-active{
+  transition: all 0.3s cubic-bezier(.36,.66,.04,1);
+ }
+ .translate-bottom-enter, .translate-bottom-leave-active{
+  transform: translateY(100%);
+  opacity: 0;
+}

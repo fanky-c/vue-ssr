@@ -1,31 +1,45 @@
-import "./style.css"
-var VueToast = {};
+import Vue from 'vue';
+import Alert from './temple.vue';
 
-VueToast.install = function(Vue) {
-	Vue.prototype.toast = function(text) {
-		var toast = document.createElement("div");
-		toast.setAttribute("role", "toast");
-		toast.innerHTML = text;
+var Toast = {}; // 定义插件对象
+var timer = null;
+var $vm = null;
 
-		document.getElementsByTagName("body")[0].appendChild(toast);
-		toast.className = 'toast fade ';
-		
-		//IE9+
-		toast.style.left = 'calc((100% - ' + toast.clientWidth + 'px)/2)';
-		toast.style.top = 'calc((100% - ' + toast.clientHeight + 'px)/2)';
 
-		setTimeout(function() {
-			toast.className = 'toast fade in';
-		}, 0);
+if (process.env.VUE_ENV == 'client') {
+  if (!document.getElementsByClassName('f-toast').length) {
 
-		setTimeout(function() {
-			toast.className = 'toast fade';
-			setTimeout(function() {
-				document.getElementsByTagName("body")[0].removeChild(toast);
-			}, 500);
-		}, 2000);
+    let toastTpl = Vue.extend(Alert) // 创建vue构造器
 
-	}	
+    $vm = new toastTpl() // 实例化vue实例
+
+    let tpl = $vm.$mount().$el;
+
+    document.body.appendChild(tpl);
+  }
 }
 
-export default VueToast
+
+Toast.install = function(Vue){
+  Vue.prototype.$toast = {
+    show(options){
+      if(typeof options === 'string'){
+        $vm.text = options          // 传入props
+      }else if(typeof options === 'object'){
+        Object.assign($vm, options) // 合并参数与实例
+      }
+
+      $vm.show = true;
+      
+      timer && clearTimeout(timer);
+      timer = setTimeout(() => {
+       $vm.show = false;
+      }, (options.time || 1.5) * 1000);
+    },
+    hide(){
+      $vm.show = false;
+    }
+  }
+}
+  
+export default Toast; 

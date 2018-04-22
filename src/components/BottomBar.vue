@@ -20,7 +20,7 @@
 
   <div class="desc" v-if="nowData.album&&nowData.name&&nowData.artists">
     <div class="disk">
-      <div class="img" @click="Full()" v-if="nowData.album">
+      <div class="img" v-if="nowData.album">
         <img v-lazy="nowData.album.picUrl" width="60" height="60" />
       </div>    
     </div>
