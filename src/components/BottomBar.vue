@@ -71,7 +71,10 @@ export default {
         this.nowData = list[0];
         this.list=list;
       }else{
-        alert('播放失败');
+        this.$toast.show({
+          text: '播放失败',
+          type: 'error'
+        })
       }
     }
     this.audio = this.$el.getElementsByTagName('audio')[0];
