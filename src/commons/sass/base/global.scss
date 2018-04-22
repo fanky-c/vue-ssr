@@ -1,20 +1,9 @@
 @import "./_reset";
 @import "./_function";
-@import "./_setting";
-
-@font-face {
-  font-family: 'AvertaStd-Semibold';
-  src:  url('#{$icomoon-font-path}/AvertaStd-Semibold.ttf');
-  font-weight: normal;
-  font-style: normal;  
-}
+@import "/_setting";
+@import "../../../assets/icons/style.scss";
 
 body{
-  /**
-   * Malgun Gothic是cjk地区韩国用的屏幕字体
-   *
-   * 
-   */
   font: 14px Arial,"Microsoft YaHei","\5fae\8f6f\96c5\9ed1","\5b8b\4f53",Malgun Gothic,Meiryo,sans-serif;
   line-height: 1;
   color: #2e3033;
@@ -23,7 +12,6 @@ body{
 
 a,
 a:hover{
-
     outline: none;
     text-decoration:none;
     -webkit-tap-highlight-color: rgba(0,0,0,0);

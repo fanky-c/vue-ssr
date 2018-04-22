@@ -42,7 +42,7 @@ export default {
       if(!this.searchString.trim()){
         this.$toast.show({
           text: '请输入搜索音乐、歌手、歌单、专辑',
-          type: 'error'
+          type: 'warn'
         })
         return;
       }
