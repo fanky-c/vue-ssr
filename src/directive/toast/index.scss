@@ -6,7 +6,7 @@
   color : #FFF;
   border-radius : 4px;
   z-index : 99;
-  background-color : #fff;
+  background-color : #3D3D3D;
   box-shadow: 0 2px 20px #B0B0B0;
   //垂直居中 - start
   top : 0;
@@ -29,15 +29,18 @@
 
 
     &.icon-success{
-      color: #68B018;
+      //color: #68B018;
+      color : #FFFFFF;
     }
   
     &.icon-warn{
-      color: #FF933F;
+      //color: #FF933F;
+      color : #FFFFFF;
     }
 
     &.icon-error{
-      color: #F44C4C;
+      //color: #F44C4C;
+      color : #FFFFFF;
     }
 
   }
