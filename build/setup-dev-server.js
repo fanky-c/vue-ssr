@@ -35,7 +35,7 @@ module.exports = function setupDevServer (app, templatePath, cb) {
     }
   }
 
-  // read template from disk and watch
+  // 读取入口html、监听变化
   template = fs.readFileSync(templatePath, 'utf-8')
   chokidar.watch(templatePath).on('change', () => {
     template = fs.readFileSync(templatePath, 'utf-8')

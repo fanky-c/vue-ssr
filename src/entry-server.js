@@ -16,7 +16,8 @@ export default context => {
     }
 
     router.push(url)
-
+    
+    // 等到 router 将可能的异步组件和钩子函数解析完
     router.onReady(() => {
       const matchedComponents = router.getMatchedComponents(); //获取当前url的所有组件
 

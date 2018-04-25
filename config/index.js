@@ -9,10 +9,6 @@ module.exports = {
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
     productionSourceMap: true,
-    // Gzip off by default as many popular static hosts such as
-    // Surge or Netlify already gzip all static assets for you.
-    // Before setting to `true`, make sure to:
-    // npm install --save-dev compression-webpack-plugin
     productionGzip: false,
     productionGzipExtensions: [
       'js', 'css'
@@ -31,15 +27,27 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
       '/api/': {
-        target: "http://localhost:8787",
+        //target: "http://localhost:8787",
+        target: "http://music.163.com/",
         changeOrigin: true,
         pathRewrite: {
           '^/api': ''
-        }
+        },
+        headers: {
+          'Accept': '*/*',
+          'Accept-Language': 'zh-CN,zh;q=0.8,gl;q=0.6,zh-TW;q=0.4',
+          'Connection': 'keep-alive',
+          'Content-Type': 'application/x-www-form-urlencoded',
+          'Referer': 'http://music.163.com',
+          'Cookie': 'appver=2.0.2',
+          'Host': 'music.163.com',
+          // 'Cookie': cookie,
+          'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.152 Safari/537.36',
+        },        
       },
       '/music163/': {
         target: "http://music.163.com/",
-        changeOrigin: true,
+        changeOrigin: false,
         pathRewrite: {
           '^/music163': ''
         },
@@ -57,11 +65,6 @@ module.exports = {
       }
 
     },
-    // CSS Sourcemaps off by default because relative paths are "buggy"
-    // with this option, according to the CSS-Loader README
-    // (https://github.com/webpack/css-loader#sourcemaps)
-    // In our experience, they generally work as expected,
-    // just be aware of this issue when enabling this option.
     cssSourceMap: false
   }
 }
