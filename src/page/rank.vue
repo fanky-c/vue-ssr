@@ -93,7 +93,7 @@ export default {
             obj.count = m.data.result.playCount;
           }
         }).catch(err =>{
-           console.error(err);
+           //console.error(err);
         })
       })
     },

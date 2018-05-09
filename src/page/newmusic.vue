@@ -22,6 +22,9 @@ export default{
 }	
 </script>
 <style scoped>
+.container{
+  
+}
 .container li{
   height: auto;
   width: 150px;

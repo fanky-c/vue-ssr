@@ -121,13 +121,11 @@ export default {
       if (m.status == 200 && m.data.code == 200 && m.data.result) {
         this.playlistdata = m.data.result;
         this.$nextTick(() => {
-
           if (this.$el.getElementsByClassName("desc")[0].offsetHeight > 40) {
             this.isexpend = true;
           } else {
             this.isexpend = false;
           }
-
 
         })
       }
