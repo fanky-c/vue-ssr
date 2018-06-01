@@ -62,13 +62,6 @@ app.use(compression({ threshold: 0 }))
 app.use(favicon('./public/favicon.ico'))
 app.use('/dist', serve('./dist', true))
 app.use('/public', serve('./public', true))
-
-// since this app has no user-specific content, every page is micro-cacheable.
-// if your app involves user-specific content, you need to implement custom
-// logic to determine whether a request is cacheable based on its url and
-// headers.
-// 1-second microcache.
-// https://www.nginx.com/blog/benefits-of-microcaching-nginx/
 app.use(microcache.cacheSeconds(1, req => useMicroCache && req.originalUrl))
 
 function render (req, res) {
