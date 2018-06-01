@@ -12,20 +12,15 @@
   
   while (length--) {
     method = methods[length];
-    
+
     // Only stub undefined methods.
-    
-    if (process.env.NODE_ENV=="development") {
-  	if (!console[method]) {
+    if (process.env.NODE_ENV == "development") {
+      if (!console[method]) {
+        console[method] = noop;
+      }
+    } else {
       console[method] = noop;
     }
-	}
-    else
-    {
-    		console[method] = noop;
-    }
   }
-  
-  
-  
+    
 }());

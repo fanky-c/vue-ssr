@@ -87,7 +87,8 @@ if (window.__INITIAL_STATE__) {
   store.replaceState(window.__INITIAL_STATE__)
 }
 
-// 因为可能存在异步组件，所以等待router将所有异步组件加载完毕，服务器端配置也需要此操作
+// 因为可能存在异步组件，所以等待router将所有异步组件加载完毕，
+// 服务器端配置也需要此操作
 router.onReady(() => {
   router.beforeResolve((to, from, next) => {
     const matched = router.getMatchedComponents(to)
@@ -101,16 +102,16 @@ router.onReady(() => {
       return next()
     }
     
-    progressLoadingbar.start()
+    progressLoadingbar.start()  //全局asyncData loading提示
     
     Promise.all(asyncDataHooks.map(hook => hook({ store, route: to })))
       .then(() => {
-        progressLoadingbar.finish()
+        progressLoadingbar.finish();
         next()
       })
       .catch(next)
   })
-  app.$mount('#app')
+  app.$mount('#app');   //挂载DOM
 })
 
 // service worker

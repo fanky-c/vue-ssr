@@ -31,7 +31,7 @@ export default context => {
       }))).then(() => {
         isDev && console.log(`data pre-fetch: ${Date.now() - s}ms`)
         // context.state 赋值成什么，window.__INITIAL_STATE__ 就是什么
-        context.state = store.state
+        context.state = store.state;
         resolve(app)
       }).catch(reject)
     }, reject)
