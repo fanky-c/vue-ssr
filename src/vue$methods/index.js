@@ -5,5 +5,4 @@ export default {
 		arraybyfilter.install(Vue);
 		playsong.install(Vue);
 	}
-
 }
