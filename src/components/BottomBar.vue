@@ -110,9 +110,7 @@ export default {
       },
       // setter
       set: function(newValue) {
-        // this.t1=newValue;
         this.audio.currentTime = newValue;
-
       }
     }
   },

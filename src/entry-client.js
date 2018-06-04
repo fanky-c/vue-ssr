@@ -110,7 +110,7 @@ router.onReady(() => {
       })
       .catch(next)
   })
-  app.$mount('#app')
+  app.$mount('#app'); //挂在dom
 })
 
 // service worker
