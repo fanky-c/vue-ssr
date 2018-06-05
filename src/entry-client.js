@@ -83,6 +83,8 @@ axios.interceptors.response.use(function(response) {
 
 //这句的作用是如果服务端的vuex数据发生改变，就将客户端的数据替换掉，
 //保证客户端和服务端的数据同步
+//window.INITIAL_STATE我们就可以知道了客户端拿到了预取的数据，然后去存到客户端的vuex中，
+//这也就是大家经常谈论的通过vuex实现前后端的状态共享
 if (window.__INITIAL_STATE__) {
   store.replaceState(window.__INITIAL_STATE__)
 }
