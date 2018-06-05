@@ -23,15 +23,22 @@ export default{
 </script>
 <style scoped>
 .container{
-  
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+.container ul{
+  display: flex;
+  flex-flow: row wrap; 
 }
 .container li{
   height: auto;
-  width: 150px;
+  width: 20%;
   cursor: pointer;
   overflow:hidden;
   display: inline-block;
-  margin: 0 0px 10px 30px;
+  text-align: center;
+  margin: 0px 0px 10px 0px;
 }
 .container li .title{
   white-space: nowrap;

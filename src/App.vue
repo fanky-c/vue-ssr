@@ -67,6 +67,7 @@ export default {
   overflow-y: auto;
   overflow-x: hidden; 
   background-color: #fafafa;
+  -webkit-overflow-scrolling: touch;
 }
 
 #top-continer {
