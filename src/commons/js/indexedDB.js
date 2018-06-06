@@ -1,6 +1,10 @@
-var indexedDB = window.indexedDB || window.webkitIndexedDB ||window.mozIndexedDB;
 
+var indexedDB = null;
 
+if (process.env.VUE_ENV == 'client') {
+  indexedDB = window.indexedDB || window.webkitIndexedDB || window.mozIndexedDB;
+
+}
 
 export default function(db_name , table_name , options) {
   var db;
@@ -122,4 +126,3 @@ export default function(db_name , table_name , options) {
 
   init();
 };
-

@@ -1,7 +1,8 @@
 <template>
 <div class="bottom-part">
   <audio style="position:absolute;" autoplay="true" :src="mp3Url" v-on:progress="setReadyduration()" v-on:durationchange="duration=audio.duration" v-on:timeupdate="currentTimeX=audio.currentTime;" v-on:volumechange="volume=audio.volume;" v-on:pause="isplay=false;"
-    v-on:playing="isplay=true;"></audio>
+    v-on:playing="isplay=true;">
+  </audio>
 
   <div class="controls">
     <div class="prev"></div>
@@ -11,14 +12,17 @@
 
   <div class="center">
     <slider class="slider1" :type="'1'" :length.sync="currentTime" :t1="readyduration" :max="duration" :realtime="false"></slider>
-    <span>{{currentTime | timefilter}}/{{duration | timefilter}}</span>
+    <span class="volume">{{currentTime | timefilter}}/{{duration | timefilter}}</span>
+    <div class="history">
+       <a href="javascript:;" class="icon-history">0</a>
+    </div>
   </div>
 
   <div class="right">
     <slider class="slider2" :length.sync="volume" max="1" :realtime="true"></slider>
   </div>
 
-  <div class="desc" v-if="nowData.album&&nowData.name&&nowData.artists">
+  <div class="desc" v-if="nowData.album && nowData.name && nowData.artists">
     <div class="disk">
       <div class="img" v-if="nowData.album">
         <img v-lazy="nowData.album.picUrl" width="60" height="60" />
@@ -39,7 +43,8 @@
 
 <script>
 import Vue from "vue"
-import slider from "./Slider"
+import slider from "./Slider";
+import * as history from '@/commons/js/history';
 export default {
   name: 'BottomBar',
   components: {
@@ -76,9 +81,13 @@ export default {
           type: 'error'
         })
       }
+      history.saveToDb({
+        url: list[0].url,
+        data: list[0] 
+      })
     }
     this.audio = this.$el.getElementsByTagName('audio')[0];
-    this.audio.volume = this.volume;
+    this.audio.volume = this.volume;  
   },
   methods: {
     playORpause() {
@@ -130,11 +139,6 @@ export default {
 </script>
 
 <style scoped>
-.slider
-{
-  width: 200px;
-
-}
 .slider
 {
   width: 80px;
@@ -205,10 +209,31 @@ export default {
   flex-grow: 1;
 }
 
-.center>span {
+.center> .volume {
   font-size: 12px;
   color: #888888;
-  margin-left: 10px;
+  margin-left: 15px;
+}
+.center> .history{
+   margin-left: 10px;
+}
+.history .icon-history{
+    display: block;
+    float: none;
+    width: 60px;
+    height: 25px;
+    padding-left: 21px;
+    background: url('../assets/images/playbar.png') no-repeat  -42px -68px;
+    line-height: 27px;
+    text-align: center;
+    color: #666;
+    text-shadow: 0 1px 0 #080707;
+    text-indent: 0;
+    text-decoration: none;
+    font-size: 12px;
+}
+.history .icon-history:before{
+  content: none;
 }
 .right
 {
