@@ -14,7 +14,7 @@
     <slider class="slider1" :type="'1'" :length.sync="currentTime" :t1="readyduration" :max="duration" :realtime="false"></slider>
     <span class="volume">{{currentTime | timefilter}}/{{duration | timefilter}}</span>
     <div class="history">
-       <a href="javascript:;" class="icon-history">0</a>
+       <a href="javascript:;" class="icon-history">{{historyNums}}</a>
     </div>
   </div>
 
@@ -62,9 +62,17 @@ export default {
       isplay: false,
       list: [],
       nowData: {},
+      historyNums: 0,
     }
   },
+  created(){
+     var self = this;
+     history.query((data)=>{
+       self.historyNums = data.length;
+     })
+  },
   mounted() {
+    var self = this;
     Vue.prototype.playMp3 = (list) => {
       this.mp3Url = list[0].url;
       this.nowData = list[0];
@@ -85,6 +93,7 @@ export default {
         url: list[0].url,
         data: list[0] 
       })
+      self.historyNums++;
     }
     this.audio = this.$el.getElementsByTagName('audio')[0];
     this.audio.volume = this.volume;  
