@@ -11,14 +11,23 @@
 
 <script>
 export default{
-  data(){
-    return {
-      newSongs : JSON.parse(this.$store.state.common.newSongs || '{}'), 
-    }
-  },
+  // data(){
+  //   return {
+  //     newSongs : {}, 
+  //   }
+  // },
+  // created(){
+  //   this.newSongs = JSON.parse(this.$store.state.common.newSongs || '{}');
+  // },
+  //在实例化之前调用所以this无法获取要通过参数传入
   asyncData ({ store }) {
     return store.dispatch('fetchNewSongs');
   },
+  computed: {
+    newSongs (){
+      return JSON.parse(this.$store.state.common.newSongs || '{}');
+    }
+  }
 }	
 </script>
 <style scoped>
