@@ -14,7 +14,8 @@
     <slider class="slider1" :type="'1'" :length.sync="currentTime" :t1="readyduration" :max="duration" :realtime="false"></slider>
     <span class="volume">{{currentTime | timefilter}}/{{duration | timefilter}}</span>
     <div class="history">
-       <a href="javascript:;" class="icon-history">{{historyNums}}</a>
+       <a href="javascript:;" class="icon-history" @click="isSHowHistory = !isSHowHistory">{{historyNums}}</a>
+       <History class="showHistoryArea" v-if="isSHowHistory" :list="[]" @closeHistory="closeHistory"></History>
     </div>
   </div>
 
@@ -44,11 +45,13 @@
 <script>
 import Vue from "vue"
 import slider from "./Slider";
+import History from './history';
 import * as history from '@/commons/js/history';
 export default {
   name: 'BottomBar',
   components: {
-    slider
+    slider,
+    History,
   },
   data() {
     return {
@@ -63,21 +66,23 @@ export default {
       list: [],
       nowData: {},
       historyNums: 0,
+      isSHowHistory: false,
     }
-  },
-  created(){
-     var self = this;
-     history.query((data)=>{
-       self.historyNums = data.length;
-     })
   },
   mounted() {
     var self = this;
+    
+    //获取历史记录
+    history.query((data)=>{
+       self.historyNums = data.length;
+    })    
+    
     Vue.prototype.playMp3 = (list) => {
       this.mp3Url = list[0].url;
       this.nowData = list[0];
       this.list=list;
     }
+    
     Vue.playMp3 = (list) => {
       if(list[0].url){
         this.mp3Url = list[0].url;
@@ -118,6 +123,9 @@ export default {
         }
       });
     },
+    closeHistory(){
+      this.isSHowHistory = false;
+    }
   },
   computed: {
     currentTime: {
@@ -244,6 +252,15 @@ export default {
 .history .icon-history:before{
   content: none;
 }
+.history .showHistoryArea{
+    position: absolute;
+    left: 50%;
+    bottom: 59px; 
+    width: 986px;
+    height: 301px;
+    margin-left: -493px;
+}
+
 .right
 {
   padding: 10px;
