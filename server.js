@@ -85,12 +85,19 @@ function render (req, res) {
   //entry-server.js有用
   const context = {
     title: 'fanky_c音乐',
-    url: req.url
+    url: req.url,
   }
   renderer.renderToString(context, (err, html) => {
     if (err) {
       return handleError(err)
     }
+    
+    //context.renderStyles();
+    // context.renderState({
+    //   contextKey: 'myCustomState',
+    //   windowKey: '__MY_STATE__'
+    // })
+    
     res.send(html)
     if (!isProd) {
       console.log(`whole request: ${Date.now() - s}ms`)

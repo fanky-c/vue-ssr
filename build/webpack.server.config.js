@@ -11,6 +11,7 @@ module.exports = merge(base, {
   entry: './src/entry-server.js',
   output: {
     filename: 'server-bundle.js',
+    // 此处告知 server bundle 使用 Node 风格导出模块(Node-style exports)
     libraryTarget: 'commonjs2'
   },
   resolve: {
@@ -18,8 +19,8 @@ module.exports = merge(base, {
       'create-api': './create-api-server.js'
     }
   },
-  // https://webpack.js.org/configuration/externals/#externals
-  // https://github.com/liady/webpack-node-externals
+  
+  //防止将某些 import 的包(package)打包到 bundle 中，而是在运行时(runtime)再去从外部获取这些扩展依赖
   externals: nodeExternals({
     // do not externalize CSS files in case we need to import it from a dep
     whitelist: /\.css$/

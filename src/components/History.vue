@@ -15,7 +15,7 @@
 <script>
 export default {
  props:{
- 	list:[]
+ 	list: Array
  },
  methods : {
    close: function(){
