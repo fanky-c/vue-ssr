@@ -259,6 +259,7 @@ export default {
     width: 986px;
     height: 301px;
     margin-left: -493px;
+    z-index: 9;
 }
 
 .right
