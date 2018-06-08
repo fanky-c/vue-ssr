@@ -11,9 +11,11 @@
     |- directive 公共的vue指令
     |- filter  全局filter方法   
     |- router  路由控制 
+    |- util    工具方法     
     |- store   状态存放          
     |- pages   各个页面入口
     |- plugin  扩展方法
+    |- vue$methods  vue实例方法    
     |- app.js  创建vue实例
     |- App.vue 总入口
     |- entry-client.js 浏览器入口文件
