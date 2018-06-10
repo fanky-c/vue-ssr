@@ -86,6 +86,7 @@ import qs from "qs"
 import config from "@/config"
 import HotBar from '@/components/HotBar'
 export default {
+  name : 'search',
   data() {
     return {
       imgdate: (new Date()).getTime(),

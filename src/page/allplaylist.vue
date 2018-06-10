@@ -57,6 +57,7 @@
 <script>
 import config from "@/config"
 export default {
+  name: 'allplaylist',
   data() {
     return {
       list: [],

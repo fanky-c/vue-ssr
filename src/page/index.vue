@@ -1,12 +1,12 @@
 <template>
 <div>
-  <div class="main-continer">
-     <router-view></router-view>
-  </div>
   <div class="tablist">
     <div class="tab" v-for="tab in tablist" v-on:click="$router.push({ name: tab.view});" :class="{select:(tab.view==$route.name)}">
       {{tab.name}}
     </div>
+  </div>
+  <div class="main-continer">
+     <router-view></router-view>
   </div>
 </div>
 </template>

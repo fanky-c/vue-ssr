@@ -52,6 +52,7 @@
 import config from '@/config';
 var  cancelTokenFn = null; 
 export default {
+  name: 'rank',
   data() {
     return {
       ranklist: config.setting.ranklist,

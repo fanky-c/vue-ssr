@@ -11,6 +11,7 @@
 
 <script>
 export default{
+  name: 'newmusic',
   // data(){
   //   return {
   //     newSongs : {}, 
