@@ -58,7 +58,7 @@ export default {
       type: 1,
       searchString: ""
     }
-  },
+  },  
   created(){
     this.type = this.$route.params.type || 1;
     this.search();    

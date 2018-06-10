@@ -33,6 +33,9 @@ export default {
       ]
     }
   },
+  // asyncData({ store }){
+  //   return store.dispatch('fetchNewSongs');
+  // },
   methods:{
     search(){
       this.$router.push({ name: 'search', params: { str: this.searchString }});
@@ -41,9 +44,7 @@ export default {
     goPlaylist(id){
       this.$router.push({ name: 'playlist', params: { id: id }});
     }
-  },
-  components: {
-  },
+  }
 }
 </script>
 

@@ -27,11 +27,12 @@ function createRenderer (bundle, options) {
     }),
     // this is only needed when vue-server-renderer is npm-linked
     basedir: resolve('./dist'),
-    // recommended for performance
+    // recommended for  
     runInNewContext: false
   }))
 }
 
+//创建一个 renderer
 let renderer
 let readyPromise
 const templatePath = resolve('./src/index.template.html')
@@ -64,6 +65,8 @@ app.use('/dist', serve('./dist', true))
 app.use('/public', serve('./public', true))
 app.use(microcache.cacheSeconds(1, req => useMicroCache && req.originalUrl))
 
+
+//将 Vue 实例渲染为 HTML
 function render (req, res) {
   const s = Date.now()
 
@@ -82,7 +85,7 @@ function render (req, res) {
     }
   }
   
-  //entry-server.js有用
+  //context head中title
   const context = {
     title: 'fanky_c音乐',
     url: req.url,
@@ -97,7 +100,7 @@ function render (req, res) {
     //   contextKey: 'myCustomState',
     //   windowKey: '__MY_STATE__'
     // })
-    
+    //console.log('页面内容:', html)
     res.send(html)
     if (!isProd) {
       console.log(`whole request: ${Date.now() - s}ms`)

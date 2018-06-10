@@ -43,6 +43,7 @@ Vue.mixin({
   //匹配要渲染的视图后，再获取数据
   beforeRouteUpdate (to, from, next) {
     const { asyncData } = this.$options;
+    console.log('beforeRouteUpdate:', asyncData)
     if (asyncData) {
       asyncData({
         store: this.$store,

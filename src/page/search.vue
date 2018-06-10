@@ -167,7 +167,7 @@ export default {
         this.search();
       }
     },
-  },
+  },  
   components: {
     'Window': () => System.import('@/components/Window'),
     HotBar,

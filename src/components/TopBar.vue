@@ -46,7 +46,13 @@ export default {
         })
         return;
       }
-      this.$router.push({ name: 'search', params: {type:config.setting.searchlist[0].type, str: this.searchString }});
+      this.$router.push({ 
+         name: 'search', 
+         params: {
+            type:config.setting.searchlist[0].type, 
+            str: this.searchString 
+          }
+      });
     },
   }, 
 }
