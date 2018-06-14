@@ -101,6 +101,7 @@ function render (req, res) {
     //   windowKey: '__MY_STATE__'
     // })
     //console.log('页面内容:', html)
+    console.log('渲染内容给前端');
     res.send(html)
     if (!isProd) {
       console.log(`whole request: ${Date.now() - s}ms`)

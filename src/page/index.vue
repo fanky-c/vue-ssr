@@ -33,9 +33,9 @@ export default {
       ]
     }
   },
-  // asyncData({ store }){
-  //   return store.dispatch('fetchNewSongs');
-  // },
+  asyncData({ store }){
+    return store.dispatch('fetchNewSongs');
+  },
   methods:{
     search(){
       this.$router.push({ name: 'search', params: { str: this.searchString }});

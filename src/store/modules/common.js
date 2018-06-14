@@ -20,6 +20,7 @@ const actions = {
 	},
   fetchNewSongs({ commit }) {
     if(process.env.VUE_ENV == 'server'){
+    console.log('渲染接口')
     return api.fetchNewSongs().then(msg => {
       commit('setNewSongs', { msg })
     }) 

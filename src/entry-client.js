@@ -40,7 +40,6 @@ Vue.mixin({
     }
   },
 
-  //匹配要渲染的视图后，再获取数据
   beforeRouteUpdate (to, from, next) {
     const { asyncData, name } = this.$options;
     console.log('beforeRouteUpdate:', asyncData , name)
@@ -52,7 +51,22 @@ Vue.mixin({
     } else {
       next()
     }
-  }
+  },
+
+  //匹配要渲染的视图后，再获取数据
+  // beforeMount(){
+  //   const { asyncData } = this.$options;
+  //   console.log('beforeRouteUpdate:111:', asyncData , name)
+  //   if (asyncData) {
+  //     // 将获取数据操作分配给 promise
+  //     // 以便在组件中，我们可以在数据准备就绪后
+  //     // 通过运行 `this.dataPromise.then(...)` 来执行其他任务
+  //     this.dataPromise = asyncData({
+  //       store: this.$store,
+  //       route: this.$route
+  //     })
+  //   }
+  // }
 })
 
 const { app, router, store } = createApp()
