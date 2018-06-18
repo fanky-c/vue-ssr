@@ -60,6 +60,7 @@ export default {
   align-items: center;
   background-color: #fafafa;;
   position: fixed;
+  z-index: 99;
 }
   .tablist .tab
   {
