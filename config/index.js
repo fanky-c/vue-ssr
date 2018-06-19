@@ -12,46 +12,7 @@ module.exports = {
     productionGzip: false,
     productionGzipExtensions: [
       'js', 'css'
-    ],
-    proxyTable: {
-      '/api/': {
-        target: "http://music.163.com/",
-        changeOrigin: true,
-        pathRewrite: {
-          '^/api': ''
-        },
-        headers: {
-          'Accept': '*/*',
-          'Accept-Language': 'zh-CN,zh;q=0.8,gl;q=0.6,zh-TW;q=0.4',
-          'Connection': 'keep-alive',
-          'Content-Type': 'application/x-www-form-urlencoded',
-          'Referer': 'http://music.163.com',
-          'Cookie': 'appver=2.0.2',
-          'Host': 'music.163.com',
-          // 'Cookie': cookie,
-          'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.152 Safari/537.36',
-        },        
-      },
-      '/music163/': {
-        target: "http://music.163.com/",
-        changeOrigin: false,
-        pathRewrite: {
-          '^/music163': ''
-        },
-        headers: {
-          'Accept': '*/*',
-          'Accept-Language': 'zh-CN,zh;q=0.8,gl;q=0.6,zh-TW;q=0.4',
-          'Connection': 'keep-alive',
-          'Content-Type': 'application/x-www-form-urlencoded',
-          'Referer': 'http://music.163.com',
-          'Cookie': 'appver=2.0.2',
-          'Host': 'music.163.com',
-          // 'Cookie': cookie,
-          'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.152 Safari/537.36',
-        },
-      }
-
-    },    
+    ],    
     // Run the build command with an extra argument to
     // View the bundle analyzer report after build finishes:
     // `npm run build --report`
@@ -66,7 +27,6 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
       '/api/': {
-        //target: "http://localhost:8787",
         target: "http://music.163.com/",
         changeOrigin: true,
         pathRewrite: {
