@@ -13,18 +13,28 @@
  </div>
 </template>
 <script>
+import * as history from '@/commons/js/history';
 export default {
  props:{
  	list: Array
+ },
+ data(){
+    return {
+        listData: [],
+    }
  },
  methods : {
    close: function(){
    	 this.$emit('closeHistory');
    }
  },
- mounted(){
- 	console.log(this.list)
- }
+ created(){
+    var self = this;
+    history.query((data)=>{
+      self.listData = data;
+      console.log('历史记录：' , self.listData)
+    })
+ },
 }	
 </script>
 <style scoped>

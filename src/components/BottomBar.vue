@@ -15,7 +15,7 @@
     <span class="volume">{{currentTime | timefilter}}/{{duration | timefilter}}</span>
     <div class="history">
        <a href="javascript:;" class="icon-history" @click="isSHowHistory = !isSHowHistory">{{historyNums}}</a>
-       <History class="showHistoryArea" v-if="isSHowHistory" :list="[]" @closeHistory="closeHistory"></History>
+       <History class="showHistoryArea" v-if="isSHowHistory" :list="list" @closeHistory="closeHistory"></History>
     </div>
   </div>
 
@@ -74,6 +74,7 @@ export default {
     
     //获取历史记录
     history.query((data)=>{
+       self.list = data;
        self.historyNums = data.length;
     })    
     
