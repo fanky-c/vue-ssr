@@ -2,14 +2,20 @@
  <div>
  	<div class="listhd">
  	   <div class="listhdc">
- 	      <h4>播放列表(0)</h4>
- 	      <a href="javascript:;" class="clear">
+ 	      <h4>播放列表({{listData.length}})</h4>
+ 	      <a href="javascript:;" class="clear" @click="clear()">
  	      	 <span class="ico icn-del"></span>清除
  	      </a>
  	      <span class="close" @click="close">关闭</span>	
  	   </div>
  	</div>
- 	<div class="listbd"></div>
+ 	<div class="listbd">
+      <div class="showHistoryList">
+        <ul>
+            <li v-for="item in listData"><span>{{item.data.name}}</span></li>
+        </ul>
+      </div>  
+    </div>
  </div>
 </template>
 <script>
@@ -24,6 +30,15 @@ export default {
     }
  },
  methods : {
+   clear: function(){
+     this.listData = [];
+     this.$toast.show({
+        text: '清除成功',
+        type: 'success'
+     })
+     history.clear();
+     this.$emit('clearHistory');
+   },
    close: function(){
    	 this.$emit('closeHistory');
    }
@@ -95,5 +110,11 @@ export default {
     height: 260px;
     overflow: hidden;
     background: url('../assets/images/playlist_bg.png') repeat-y -1014px 0;	
+}
+.listbd .showHistoryList{
+    width: 524px;
+    margin-left: 25px;
+    height: 100%;
+    overflow-y:auto;
 }	
 </style>

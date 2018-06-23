@@ -15,7 +15,7 @@
     <span class="volume">{{currentTime | timefilter}}/{{duration | timefilter}}</span>
     <div class="history">
        <a href="javascript:;" class="icon-history" @click="isSHowHistory = !isSHowHistory">{{historyNums}}</a>
-       <History class="showHistoryArea" v-if="isSHowHistory" :list="list" @closeHistory="closeHistory"></History>
+       <History class="showHistoryArea" v-if="isSHowHistory" :list="list" @clearHistory="clearHistory" @closeHistory="closeHistory"></History>
     </div>
   </div>
 
@@ -123,6 +123,9 @@ export default {
           id: id
         }
       });
+    },
+    clearHistory(){
+      this.historyNums = 0;
     },
     closeHistory(){
       this.isSHowHistory = false;
