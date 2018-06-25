@@ -112,9 +112,18 @@ export default {
     background: url('../assets/images/playlist_bg.png') repeat-y -1014px 0;	
 }
 .listbd .showHistoryList{
-    width: 524px;
-    margin-left: 25px;
+    width: 550px;
+    padding-left: 3px;
     height: 100%;
     overflow-y:auto;
 }	
+.showHistoryList ul li{
+  color: #ccc;
+  padding: 3px 0px 3px 25px;
+  cursor: pointer;  
+}
+.showHistoryList ul li:hover{
+  background: rgba(0,0,0,0.3);
+  color: white;
+}
 </style>
